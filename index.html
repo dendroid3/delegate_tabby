@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabby - Delegate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --main-bg: #cd7143;
+        --secondary-bg: #f4cb9f;
+        --text-color: white;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: var(--main-bg);
+        font-family: "Share Tech Mono", monospace;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .mt {
+        margin-top: 1.25rem;
+      }
+      /* Left Section */
+      .left-section {
+        flex: 1 1 400px;
+        max-width: 600px;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image-div {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h4 {
+        font-weight: normal;
+        margin-top: 0.5rem;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        margin: 0.75rem 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+      }
+
+      nav ul li {
+        background-color: pink;
+        color: #000;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li:hover {
+        background-color: #ffe3e3;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Right Section */
+      .right-section {
+        flex: 1 1 400px;
+        max-width: 700px;
+        background-color: var(--secondary-bg);
+        color: #000;
+        border-radius: 0.5rem;
+        padding: 2rem 1.5rem;
+        overflow-y: auto;
+        max-height: calc(100vh - 4rem);
+      }
+
+      .right-section h1,
+      .right-section h2 {
+        text-decoration: underline;
+      }
+
+      ol {
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+      }
+
+      #my_projects ol li {
+        margin-bottom: 2rem;
+      }
+
+      a {
+        color: #004aad;
+        text-decoration: underline;
+      }
+
+      .right-section::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .right-section::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+
+      .right-section::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* --- Responsive --- */
+      @media (max-width: 1024px) {
+        main {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .left-section,
+        .right-section {
+          width: 100%;
+          max-width: 90%;
+        }
+
+        .right-section {
+          max-height: none;
+        }
+
+        nav ul {
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 1rem;
+        }
+
+        h1 {
+          font-size: 1.3rem;
+        }
+
+        img {
+          width: 120px;
+          height: 120px;
+        }
+
+        nav ul li {
+          margin: 0.25rem 0;
+          padding: 0.4rem 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .right-section {
+          padding: 1rem;
+        }
+
+        main {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- Left side -->
+      <section class="left-section">
+        <div class="image-div">
+          <img src="assets/profile_image.jpeg" alt="Tabitha profile" />
+        </div>
+
+        <div id="profile-section">
+          <h1>Tabitha Wanjiru Iregi</h1>
+          <h4>Your Accountable Servant</h4>
+          <hr />
+          <h4>Vote for the Girl Who Doesn’t Crash</h4>
+          <hr />
+
+          <div>
+            <p>No bugs, no blame — I’ll set things right,</p>
+            <p>And keep our goals in perfect sight.</p>
+            <p>I’ll debug problems, big or small,</p>
+            <p>Accountability — my protocol!</p>
+            <br />
+            <p>Vote for me to lead the way,</p>
+            <p>With code (and care) that won’t decay.</p>
+            <br />
+            <strong>
+              <p>-- Vote smart. Vote stable. Vote me — no crashes! --</p>
+            </strong>
+            <hr />
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#about_me">About Me</a></li>
+            <li><a href="#why_i_am_running">Why I Am Running</a></li>
+            <li><a href="#vision">My Vision and Promises</a></li>
+            <li><a href="#testimonials">Peer Support</a></li>
+            <li><a href="#contacts">Contact Me</a></li>
+            <li><a href="#fun_fact">Fun Fact</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Right side -->
+      <section class="right-section">
+        <div id="about_me">
+          <h1>About Me</h1>
+          <p>
+            Hello there! I'm <strong>Tabitha Wanjiru Iregi</strong>, a
+            first-year Computer Science student with a deep love for tech,
+            teamwork, and truth.
+          </p>
+          <p>
+            I’m the kind of person who believes that great code, and great
+            leadership, both depend on accountability. When I say I’ll do
+            something, I mean it. Like the visionary philosopher, G-Eazy, once
+            said - "Just know, I mean it!"
+          </p>
+          <p>
+            Outside class, I’m probably debugging my assignments, sipping
+            coffee, or hunting for the next cool hackathon/club to join.
+          </p>
+        </div>
+
+        <div id="why_i_am_running" class="mt">
+          <h1>Why I Am Running</h1>
+          <p>
+            I’m running for Delegate because I want our Computer Science
+            department to run as smoothly as a well-written script —
+            transparent, efficient, and dependable.
+          </p>
+          <p>
+            Too often, student concerns get lost in the void. I want to bridge
+            that gap and ensure that every issue raised gets tracked, followed
+            up, and resolved.
+          </p>
+          <ol>
+            <li>Accountability in communication</li>
+            <li>Consistency in follow-ups</li>
+            <li>Openness to feedback and collaboration</li>
+          </ol>
+        </div>
+
+        <div id="vision" class="mt">
+          <h1>My Vision and Promises</h1>
+          <p>
+            My vision is a department where ideas are heard, progress is
+            visible, and leaders keep their word.
+          </p>
+          <ol>
+            <li>
+              <strong>Transparency:</strong> You’ll always know what’s being
+              done on your behalf.
+            </li>
+            <li>
+              <strong>Efficiency:</strong> Turning feedback into action — fast.
+            </li>
+            <li>
+              <strong>Inclusivity:</strong> Every student matters — from
+              freshers to finalists.
+            </li>
+            <li>
+              <strong>Innovation:</strong> Encouraging creativity, coding clubs,
+              and collaboration.
+            </li>
+          </ol>
+          <p>
+            Together, we can build a culture that doesn’t just talk about
+            accountability — we live it.
+          </p>
+        </div>
+
+        <div id="testimonials" class="mt">
+          <h1>Peer Support</h1>
+          <p>Here’s what a few classmates say about working with me:</p>
+          <blockquote>
+            “Tabitha’s the first to check in when a project’s stuck — she keeps
+            the team focused and on schedule.”<br />
+            <em>– Brian, CS 1B</em>
+          </blockquote>
+          <blockquote>
+            “She actually follows up after meetings. That level of
+            accountability? We need it.”<br />
+            <em>– Mary, CS 2A</em>
+          </blockquote>
+          <blockquote>
+            “Dependable, calm under pressure, and a good sense of humor — that’s
+            Tabby.”<br />
+            <em>– Kevin, CS 1A</em>
+          </blockquote>
+        </div>
+
+        <div id="contacts" class="mt">
+          <h1>Contact Me</h1>
+          <p>Let’s connect! I’m open to your ideas, feedback, and support</p>
+          <ol>
+            <li>
+              <a href="mailto:tabitha.iregi@students.dkut.ac.ke"
+                >tabitha.iregi25@students.dkut.ac.ke</a
+              >
+            </li>
+            <li><a href="tel:+254705715099">+254 705 715 099</a></li>
+            <li>
+              <a href="https://wa.me/+254750890212" target="_blank"
+                >WhatsApp Me</a
+              >
+            </li>
+            <li>
+              <a href="https://x.com/@tabby_codes" target="_blank"
+                >Join My Accountability Group</a
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div id="fun_fact" class="mt">
+          <h1>Fun Fact</h1>
+          <p>
+            I once reminded my classmates about a meeting… twice… and they still
+            showed up late. 😅 If elected, I’ll make sure no one misses
+            important info — accountability, always. <br />
+          </p>
+          <br />
+          <p>
+            Oh, and BTW, this site is NOT vibe-coded - I built it in less than
+            an hour, using no framework!
+          </p>
+        </div>
+        <br /><br />
+        <p style="text-align: center; font-size: 1.5rem;">
+          <strong>Vote smart. Vote stable. Vote Tabby — no crashes!</strong>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
